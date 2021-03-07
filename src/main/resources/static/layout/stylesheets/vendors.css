@@ -3273,7 +3273,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #1e94d2;
+  color: #e30b0b; /*#1e94d2*/
   text-decoration: none;
 }
 a:hover,

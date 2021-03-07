@@ -373,7 +373,7 @@
   text-decoration: none;
 }
 .aw-menu__item.is-active > a {
-  color: #1e94d2;
+  color: #e30b0b;
 }
 .aw-menu__item.is-expanded {
   border-left: 3px solid;
