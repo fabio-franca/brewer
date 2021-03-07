@@ -9,9 +9,9 @@
 
 	<title>Brewer</title>
 
-	<link rel="stylesheet" type="text/css" href="/brewer/layout/stylesheets/vendors.min.css"/>
-	<link rel="stylesheet" type="text/css" href="/brewer/layout/stylesheets/algaworks.min.css"/>
-	<link rel="stylesheet" type="text/css" href="/brewer/layout/stylesheets/application.css"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/layout/stylesheets/vendors.min.css}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/layout/stylesheets/algaworks.min.css}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/layout/stylesheets/application.css}"/>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,7 +27,7 @@
 
 	    <div class="navbar-header">
 	     	<a class="navbar-brand  hidden-xs" href="#">
-	        	<img alt="NPI" src="/brewer/images/NPI-logo.PNG" width="65"/>
+	        	<img alt="NPI" th:src="@{/images/NPI-logo.PNG}" th:width="${65}"/>
 	      	</a>
 
 	      	<ul class="nav  navbar-nav">
@@ -94,11 +94,11 @@
 	
 	<footer class="aw-layout-footer  js-content">
 		<div class="container-fluid">
-			<span class="aw-footer-disclaimer">&copy; 2021 NPI - Tecnologia. Todos os direitos reservados.</span>
+			<span class="aw-footer-disclaimer">&copy; 2021 NPI-Tecnologia. Todos os direitos reservados.</span>
 		</div>
 	</footer>
 </div>
-<script src="/brewer/layout/javascripts/vendors.min.js"></script>
-<script src="/brewer/layout/javascripts/algaworks.min.js"></script>
+<script th:src="@{/layout/javascripts/vendors.min.js}"></script>
+<script th:src="@{/layout/javascripts/algaworks.min.js}"></script>
 </body>
 </html>
