@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="'layout/LayoutPadrao'">
+		
+<head>
+	<title>Cadastro de Usuários</title>
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/stylesheets/vendors/bootstrap-switch.min.css}"/>
+	
+</head>
+
+<body>
+
+<section layout:fragment="conteudo">
+
+	<div class="page-header">
+			<div class="container-fluid">
+				<h1>
+					Cadastro de Usuários
+				</h1>
+			</div>
+	</div>
+	
+	<div class="container-fluid">
+
+<form method="POST" th:object="${usuario}" class="form-vertical  js-form-loading">
+	
+	<div class="row" >
+	
+		<div class="col-sm-5 form-group">
+			<label for="nomeusuario">Nome</label>
+			<input id="nomeUsuario" type="text" class="form-control"/>
+		</div>
+	</div>
+
+	<div class="row" >
+		<div class="col-sm-5 form-group">
+			<label for="email">E-mail</label>
+			<input id="email" type="text" class="form-control"/>
+		</div>
+		<div class="col-sm-2 form-group">
+			<label for="nascimento">Data de Nascimento</label>
+			<input id="nascimento" type="text" class="form-control"/>
+		</div>
+	</div>	
+	
+		<div class="row" >
+			<div class="col-sm-2 form-group">
+				<label for="senha">Senha</label>
+				<input id="senha" type="text" class="form-control"/>
+			</div>
+			<div class="col-sm-2 form-group">
+				<label for="confsenha">Confirmação de Senha</label>
+				<input id="confSenha" type="text" class="form-control"/>
+			</div>
+				<div class="form-group  col-sm-3">
+						<label for="control-label">Status</label>
+						<div>
+								<input type="checkbox" class="js-status" data-size="small" 
+								data-off-color="danger" data-on-text="Ativo" data-off-text="Inativo">						
+						</div>
+					</div>
+		</div>
+		
+		<div class="row" >
+			<div class="form-group col-sm-6">
+					<label for="grupos">Grupos</label>
+					<div>
+						<div class="checkbox checkbox-inline">
+							<input type="checkbox" />
+							<label>Administrador</label>						
+						</div>
+						<div class="checkbox checkbox-inline">
+							<input type="checkbox"/>
+							<label>Vendedor</label>						
+						</div>
+					</div>
+				</div>
+		</div>
+		
+		<div class="form-group">
+			<button class="btn  btn-primary" type="submit">Salvar</button>
+		</div>
+	</form>
+</div>
+</section>
+	<script src="/brewer/layout/javascripts/vendors.min.js"></script>
+	<script src="/brewer/layout/javascripts/algaworks.min.js"></script>
+</body>
+
+<th:block layout:fragment="javascript-extra">
+	<script th:src="@{/javascripts/vendors/bootstrap-switch.min.js}"></script>
+	<script>
+		$('.js-status').bootstrapSwitch();
+	</script>
+
+</th:block>
+</html>

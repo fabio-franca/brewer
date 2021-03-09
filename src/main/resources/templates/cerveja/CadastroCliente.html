@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="'layout/LayoutPadrao'">
+	
+<head>
+	<title>Cadastro de Clientes</title>
+</head>
+
+<body>
+
+<section layout:fragment="conteudo">
+
+	<div class="page-header">
+		<div class="container-fluid">
+			<h1>
+				Cadastro de Clientes
+			</h1>
+		</div>
+	</div>
+	
+	<div class="container-fluid">
+
+<form method="POST" th:object="${cliente}" class="form-vertical  js-form-loading">
+
+	<div class="row" >
+			<div class="col-sm-5 form-group">
+				<label for="nomeCliente">Nome</label>
+				<input id="nomeCliente" type="text" class="form-control"/>
+			</div>
+			</div>
+			
+	<div class="row" >
+			<div class="col-lg-5 col-sm-5 form-group">
+					<label for="tipoPessoa">Tipo Pessoa</label>
+					<div>
+						<div class="radio radio-inline">
+							<input type="radio" name="origem">
+							<label>Física</label>						
+						</div>
+						<div class="radio radio-inline">
+							<input type="radio" name="origem">
+							<label>Jurídica</label>				
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-5 form-group">
+						<label for="cpfCliente">CPF/CNPJ</label>
+						<input id="cpfCliente" type="text" class="form-control"/>
+				</div>		
+			</div>
+			
+	<div class="row" >
+		<div class="col-sm-5 form-group">
+			<label for="telefone">Telefone</label>
+			<input id="telefoneCliente" type="text" class="form-control"/>
+		</div>
+		<div class="col-sm-5 form-group">
+			<label for="email">E-mail</label>
+			<input id="emailCliente" type="text" class="form-control"/>
+		</div>
+	</div>	
+	
+	<div class="row" >
+		<div class="col-sm-5 form-group">
+			<label for="logradouro">Logradouro</label>
+			<input id="logradouroCliente" type="text" class="form-control"/>
+		</div>
+		<div class="col-sm-3 form-group">
+			<label for="numero">Número</label>
+			<input id="numeroCliente" type="text" class="form-control"/>
+		</div>
+		<div class="col-sm-4 form-group">
+			<label for="complemento">Complemento</label>
+			<input id="complementoCliente" type="text" class="form-control"/>
+		</div>
+	</div>	
+	
+	<div class="row" >
+		<div class="col-sm-5 form-group">
+			<label for="cep">CEP</label>
+			<input id="cepCliente" type="text" class="form-control"/>
+		</div>
+		<div class="col-sm-3 form-group">
+					<label for="estado">Estado</label>
+					<select id="estadoCliente" class="form-control">
+						<option value="">Selecione o estado</option>
+						<option value="1">Ceará</option>
+					</select>
+		</div>
+		<div class="col-sm-3 form-group">
+					<label for="cidade">Cidade</label>
+					<select id="cidadeCliente" class="form-control">
+						<option value="">Selecione a cidade</option>
+						<option value="1">Fortaleza</option>
+						<option value="2">Maranguape</option>
+					</select>
+		</div>
+	</div>	
+	
+		<div class="form-group">
+			<button class="btn  btn-primary" type="submit">Salvar</button>
+		</div>
+</form>
+</div>	
+		
+</section>
+	<script src="/brewer/layout/javascripts/vendors.min.js"></script>
+	<script src="/brewer/layout/javascripts/algaworks.min.js"></script>
+</body>
+</html>
