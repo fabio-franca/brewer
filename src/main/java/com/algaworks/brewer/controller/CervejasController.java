@@ -17,7 +17,6 @@ import com.algaworks.brewer.model.Sabor;
 import com.algaworks.brewer.repository.Estilos;
 import com.algaworks.brewer.service.CadastroCervejaService;
 
-
 @Controller
 public class CervejasController {
 	
@@ -26,31 +25,25 @@ public class CervejasController {
 	
 	@Autowired
 	private CadastroCervejaService cadastroCervejaService;
-	
-	
+
 	@RequestMapping("/cervejas/novo")
-	public ModelAndView novo(Cerveja cerveja) {		
+	public ModelAndView novo(Cerveja cerveja) {
 		ModelAndView mv = new ModelAndView("cerveja/CadastroCerveja");
 		mv.addObject("sabores", Sabor.values());
 		mv.addObject("estilos", estilos.findAll());
 		mv.addObject("origens", Origem.values());
-		
 		return mv;
 	}
 	
 	@RequestMapping(value = "/cervejas/novo", method = RequestMethod.POST)
-	public ModelAndView cadastrar(@Valid Cerveja cerveja , BindingResult result, Model model
-			, RedirectAttributes attributes) {
+	public ModelAndView cadastrar(@Valid Cerveja cerveja, BindingResult result, Model model, RedirectAttributes attributes) {
 		if (result.hasErrors()) {
 			return novo(cerveja);
 		}
 		
-		attributes.addFlashAttribute("mensagem", "Cerveja salva com sucesso!");
 		cadastroCervejaService.salvar(cerveja);
-		
+		attributes.addFlashAttribute("mensagem", "Cerveja salva com sucesso!");
 		return new ModelAndView("redirect:/cervejas/novo");
-		
 	}
 	
-
 }

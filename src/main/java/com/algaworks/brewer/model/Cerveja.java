@@ -19,40 +19,40 @@ import org.hibernate.validator.constraints.NotBlank;
 @Entity
 @Table(name = "cerveja")
 public class Cerveja {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
-	
-	@NotBlank(message = "Código SKU é obrigatório")
+
+	@NotBlank(message = "SKU é obrigatório")
 	private String sku;
-	
-	@NotBlank(message = "Nome da cerveja é obrigatório")
+
+	@NotBlank(message = "Nome é obrigatório")
 	private String nome;
-	
-	@Size(min = 1, max = 50, message = "Tamanho da descrição entre 1 a 50 caracteres.")
+
+	@Size(min = 1, max = 50, message = "O tamanho da descrição deve estar entre 1 e 50")
 	private String descricao;
-	
+
 	private BigDecimal valor;
-	
+
 	@Column(name = "teor_alcoolico")
 	private BigDecimal teorAlcoolico;
-	
+
 	private BigDecimal comissao;
-	
+
 	@Column(name = "quantidade_estoque")
 	private Integer quantidadeEstoque;
-	
+
 	@Enumerated(EnumType.STRING)
 	private Origem origem;
-	
+
 	@Enumerated(EnumType.STRING)
 	private Sabor sabor;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "codigo_estilo")
 	private Estilo estilo;
-	
+
 	public String getSku() {
 		return sku;
 	}
@@ -165,6 +165,5 @@ public class Cerveja {
 			return false;
 		return true;
 	}
-	
-	
+
 }
