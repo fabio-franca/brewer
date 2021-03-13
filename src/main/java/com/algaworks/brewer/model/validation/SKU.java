@@ -10,15 +10,16 @@ import javax.validation.OverridesAttribute;
 import javax.validation.Payload;
 import javax.validation.constraints.Pattern;
 
-	@Target({ ElementType.FIELD, ElementType.METHOD, ElementType.ANNOTATION_TYPE })
-	@Retention(RetentionPolicy.RUNTIME)
-	@Constraint(validatedBy = {})
-	@Pattern(regexp = "([a-zA-Z]{2}\\d{4}])?")
-	public @interface SKU {
-		
-		@OverridesAttribute(constraint = Pattern.class, name = "message")
-		String message() default "SKU deve seguir o padrão LLNNNN. Sendo 'L' para letra e 'N' para número.";
-		
-		Class<?>[] groups() default {};
-		Class<? extends Payload>[] payload() default {};
-	}
+@Target({ ElementType.FIELD, ElementType.METHOD, ElementType.ANNOTATION_TYPE })
+@Retention(RetentionPolicy.RUNTIME)
+@Constraint(validatedBy = {})
+@Pattern(regexp = "([a-zA-Z]{2}\\d{4})?")
+public @interface SKU {
+
+	@OverridesAttribute(constraint = Pattern.class, name = "message")
+	String message() default "SKU deve seguir o padrão XX9999";
+	
+	Class<?>[] groups() default {};
+	Class<? extends Payload>[] payload() default {};
+	
+}
