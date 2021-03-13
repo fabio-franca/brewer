@@ -9,6 +9,8 @@
 	
 	<Loggers>
 		<Logger name="com.algaworks.brewer.controller" level="error"/>
+		
+		<Logger name="org.hibernate" level="debug"/>
 	
 		<Root level="error">
 			<AppenderRef ref="Console" />
