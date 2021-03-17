@@ -14,7 +14,7 @@
 <body>
 
 <section layout:fragment="conteudo">
-
+ 
 	<div class="page-header">
 			<div class="container-fluid">
 				<h1>
@@ -25,35 +25,36 @@
 	
 	<div class="container-fluid">
 
+	<th:block th:include="fragments/MensagemSucesso"></th:block>
 <form method="POST" th:object="${usuario}" class="form-vertical  js-form-loading">
-	
+	<th:block th:include="fragments/MensagensErroValidacao"></th:block>
 	<div class="row" >
 	
-		<div class="col-sm-5 form-group">
-			<label for="nomeusuario">Nome</label>
-			<input id="nomeUsuario" type="text" class="form-control"/>
+		<div class="col-sm-5 form-group" th:classappend="${#fields.hasErrors('nome')} ? has-error">
+			<label for="nomeusuario" class="control-label">Nome</label>
+			<input id="nomeUsuario" type="text" class="form-control" th:field="*{nome}"/>
 		</div>
 	</div>
 
 	<div class="row" >
-		<div class="col-sm-5 form-group">
-			<label for="email">E-mail</label>
-			<input id="email" type="text" class="form-control"/>
+		<div class="col-sm-5 form-group" th:classappend="${#fields.hasErrors('email')} ? has-error">
+			<label for="email" class="control-label">E-mail</label>
+			<input id="email" type="text" class="form-control" th:field="*{email}"/>
 		</div>
-		<div class="col-sm-2 form-group">
-			<label for="nascimento">Data de Nascimento</label>
-			<input id="nascimento" type="text" class="form-control"/>
+		<div class="col-sm-2 form-group" th:classappend="${#fields.hasErrors('nascimento')} ? has-error">
+			<label for="nascimento" class="control-label">Data de Nascimento</label>
+			<input id="nascimento" type="text" class="form-control" th:field="*{nascimento}"/>
 		</div>
 	</div>	
 	
 		<div class="row" >
-			<div class="col-sm-2 form-group">
-				<label for="senha">Senha</label>
-				<input id="senha" type="text" class="form-control"/>
+			<div class="col-sm-2 form-group" th:classappend="${#fields.hasErrors('senha')} ? has-error">
+				<label for="senha" class="control-label">Senha</label>
+				<input id="senha" type="text" class="form-control" th:field="*{senha}"/>
 			</div>
-			<div class="col-sm-2 form-group">
-				<label for="confsenha">Confirmação de Senha</label>
-				<input id="confSenha" type="text" class="form-control"/>
+			<div class="col-sm-2 form-group" th:classappend="${#fields.hasErrors('confirmaSenha')} ? has-error">
+				<label for="confsenha" class="control-label">Confirmação de Senha</label>
+				<input id="confSenha" type="text" class="form-control" th:field="*{confirmaSenha}"/>
 			</div>
 				<div class="form-group  col-sm-3">
 						<label for="control-label">Status</label>
@@ -65,7 +66,7 @@
 		</div>
 		
 		<div class="row" >
-			<div class="form-group col-sm-6">
+			<div class="form-group col-sm-6" >
 					<label for="grupos">Grupos</label>
 					<div>
 						<div class="checkbox checkbox-inline">
