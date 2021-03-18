@@ -79,19 +79,18 @@ public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationCon
 		DefaultFormattingConversionService conversionService = new DefaultFormattingConversionService();
 		conversionService.addConverter(new EstiloConverter());
 		
-		//Conversão de números com casas decimais
 		NumberStyleFormatter bigDecimalFormatter = new NumberStyleFormatter("#,##0.00");
 		conversionService.addFormatterForFieldType(BigDecimal.class, bigDecimalFormatter);
 		
-		//Conversão de números inteiros
 		NumberStyleFormatter integerFormatter = new NumberStyleFormatter("#,##0");
 		conversionService.addFormatterForFieldType(Integer.class, integerFormatter);
 		
 		return conversionService;
 	}
-
+	
 	@Bean
 	public LocaleResolver localeResolver() {
-		return new FixedLocaleResolver(new Locale("pt","BR"));
+		return new FixedLocaleResolver(new Locale("pt", "BR"));
 	}
+	
 }
