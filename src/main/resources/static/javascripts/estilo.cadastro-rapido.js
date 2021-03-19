@@ -59,14 +59,8 @@ Brewer.EstiloCadastroRapido = (function() {
 	
 }());
 
-
 $(function() {
 		
 		var estiloCadastroRapido = new Brewer.EstiloCadastroRapido();
 		estiloCadastroRapido.iniciar();
-	
-	
-	
-	
-	
 });
