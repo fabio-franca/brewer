@@ -1,6 +1,7 @@
 var Brewer = Brewer || {};
 
 Brewer.EstiloCadastroRapido = (function() {
+	
 		function EstiloCadastroRapido() {
 			
 			this.modal = $('#modalCadastroRapidoEstilo');

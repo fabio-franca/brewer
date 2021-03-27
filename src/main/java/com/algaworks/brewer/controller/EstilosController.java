@@ -53,11 +53,8 @@ public class EstilosController {
 			return ResponseEntity.badRequest().body(result.getFieldError("nome").getDefaultMessage());
 		}
 		
-		
 			estilo = cadastroEstiloService.salvar(estilo);
-		
 		
 		return ResponseEntity.ok(estilo);
 	}
-	
 }
