@@ -1,4 +1,4 @@
-package com.algaworks.brewer.repository.helper.cerveja;
+package com.algaworks.brewer.repository.helper.cervejas;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -38,14 +38,12 @@ public class CervejasImpl implements CervejasQueries {
 		criteria.setMaxResults(totalRegistrosPorPagina);
 		
 		Sort sort = pageable.getSort();
-		System.out.println(">>> pageable: " +pageable);
-		System.out.println(">>> sort: " +sort);
+		
 		if (sort != null) {
 			Sort.Order order = sort.iterator().next();
-			System.out.println(">>> order: " + order);
 			
 			String property = order.getProperty();
-			System.out.println(">>> propriedade: " + property);
+			
 			criteria.addOrder(order.isAscending() ? Order.asc(property) : Order.desc(property));
 		}
 		

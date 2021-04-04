@@ -1,4 +1,4 @@
-package com.algaworks.brewer.repository.helper.cerveja;
+package com.algaworks.brewer.repository.helper.cervejas;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
