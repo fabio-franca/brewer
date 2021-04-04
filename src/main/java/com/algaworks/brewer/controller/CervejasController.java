@@ -64,6 +64,8 @@ public class CervejasController {
 		mv.addObject("sabores", Sabor.values());
 		mv.addObject("origens", Origem.values());
 		
+		//pageable.getSort().getOrderFor("sku").getDirection();
+		
 		PageWrapper<Cerveja> paginaWrapper = new PageWrapper<>(cervejas.filtrar(cervejaFilter, pageable), httpServletRequest);
 		
 		mv.addObject("pagina", paginaWrapper);
