@@ -11,6 +11,6 @@ public class ClientesController {
 	
 	@RequestMapping("/clientes/novo")
 	public String novo() {
-		return "cerveja/CadastroCliente";
+		return "cliente/CadastroCliente";
 	}
 }
