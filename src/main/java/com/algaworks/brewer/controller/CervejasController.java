@@ -54,6 +54,7 @@ public class CervejasController {
 		
 		cadastroCervejaService.salvar(cerveja);
 		attributes.addFlashAttribute("mensagem", "Cerveja salva com sucesso!");
+		System.out.println("nome da cerveja>>>: "+cerveja.getNome());
 		return new ModelAndView("redirect:/cervejas/novo");
 	}
 	
