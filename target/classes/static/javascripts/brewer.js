@@ -1,5 +1,6 @@
 var Brewer = Brewer || {};
 
+//Criar função para máscara de dinheiro
 Brewer.MaskMoney = (function() {
 	function MaskMoney() {
 		this.decimal = $('.js-decimal');
@@ -15,6 +16,7 @@ Brewer.MaskMoney = (function() {
 	
 }());
 
+//Criar função para máscara de telefone
 Brewer.MaskPhoneNumber = (function() {
 	function MaskPhoneNumber() {
 		this.inputPhoneNumber = $('.js-phone-number');
@@ -37,12 +39,31 @@ Brewer.MaskPhoneNumber = (function() {
 	return MaskPhoneNumber;
 }());
 
+//Criar função para máscara de CEP
+Brewer.MaskCep = (function() {
+	
+	function MaskCep() {
+		this.inputCep = $('.js-cep');
+	}
+	
+	MaskCep.prototype.enable = function() {
+		this.inputCep.mask('00.000-000');
+	}
+	
+	return MaskCep;
+	
+}());
+
 $(function() {
-	//máscara de dinheiro
+	//Habilitar máscara de dinheiro
 	var maskMoney = new Brewer.MaskMoney();
 	maskMoney.enable();
 	
-	//máscara de telefone
+	//Habilitar máscara de telefone
 	var maskPhoneNumber = new Brewer.MaskPhoneNumber();
 	maskPhoneNumber.enable();
+	
+	//Habilitar máscara de cep
+	var maskCep = new Brewer.MaskCep();
+	maskCep.enable();
 });
