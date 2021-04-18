@@ -3,7 +3,7 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:data="http://www.thymeleaf.org/extras/data"
-	layout:decorate="layout/LayoutPadrao">
+	layout:decorate="~{layout/LayoutPadrao}">
 
 <head>
 	<title>Cadastro de cliente</title>
@@ -94,19 +94,25 @@
 				</div>
 				<div class="form-group  col-sm-3">
 					<label  for="cidade">Cidade</label>
-					<select id="cidade" class="form-control">
-						<option value="">Selecione a cidade</option>
-					</select>
+					<div class="bw-field-action">
+						<select id="cidade" class="form-control" data:url="@{/cidades}">
+						</select>
+						
+						<div class="bw-field-action__icon  js-img-loading" style="display: none">
+							<img th:src="@{/images/mini-loading.gif}"/>
+						</div>
+					</div>
 				</div>
-			</div>
+				</div>
 			
-			<button type="submit" class="btn  btn-primary">Salvar</button>				
+				<button type="submit" class="btn  btn-primary">Salvar</button>				
 		</form>
 	</div>
 </section>
 
 <th:block layout:fragment="javascript-extra">
 	<script th:src="@{/javascripts/cliente.mascara-cpf-cnpj.js}"></script>
+	<script th:src="@{/javascripts/cliente.combo-estado-cidade.js}"></script>
 </th:block>
 
 </html>

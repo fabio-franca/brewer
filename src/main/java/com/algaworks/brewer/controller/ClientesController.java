@@ -21,6 +21,7 @@ public class ClientesController {
 		ModelAndView mv = new ModelAndView("cliente/CadastroCliente");
 		mv.addObject("tiposPessoa", TipoPessoa.values());
 		mv.addObject("estados", estados.findAll());
+		
 		return mv;
 	}
 }
