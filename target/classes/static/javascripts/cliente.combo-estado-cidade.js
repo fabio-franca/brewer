@@ -2,6 +2,7 @@ var Brewer = Brewer || {};
 
 Brewer.ComboEstado = (function() {
 	
+	//Inicializar Componentes
 	function ComboEstado() {
 		this.combo = $('#estado');
 		this.emitter = $({});
@@ -22,6 +23,7 @@ Brewer.ComboEstado = (function() {
 
 Brewer.ComboCidade = (function() {
 	
+	//Inicializar Componentes
 	function ComboCidade(comboEstado) {
 		this.comboEstado = comboEstado;
 		this.combo = $('#cidade');
@@ -59,6 +61,7 @@ Brewer.ComboCidade = (function() {
 		this.combo.removeAttr('disabled');
 	}
 	
+	//Limpa o que tiver no combo Cidade
 	function reset() {
 		this.combo.html('<option value="">Selecione a cidade</option>');
 		this.combo.val('');
@@ -78,6 +81,7 @@ Brewer.ComboCidade = (function() {
 	
 }());
 
+//Inicilizar função
 $(function() {
 	
 	var comboEstado = new Brewer.ComboEstado();
